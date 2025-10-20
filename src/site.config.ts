@@ -3,7 +3,7 @@ import type { CardListData, Config, IntegrationUserConfig, ThemeUserConfig } fro
 export const theme: ThemeUserConfig = {
   // === Basic configuration ===
   /** Title for your website. Will be used in metadata and as browser tab title. */
-  title: "The Sejolyn Memo",
+  title: "Sejolyn's Log",
   /** Will be used in index page & copyright declaration */
   author: 'Sejolyn',
   /** Description metadata for your website. Can be used in page metadata. */
@@ -62,12 +62,7 @@ export const theme: ThemeUserConfig = {
     links: [
       // Registration link
       {
-        title: '饿 ICP 4190',
-        link: 'https://beian.miit.gov.cn/',
-        style: 'text-xs text-muted-foreground' // Uno/TW CSS class
-      },
-      {
-        title: '萌 ICP 4190',
+        title: 'Moe ICP 114514',
         link: 'https://icp.gov.moe/?keyword=114514',
         style: 'text-sm' // Uno/TW CSS class
       },
@@ -78,9 +73,9 @@ export const theme: ThemeUserConfig = {
       },
     ],
     /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
-    credits: false,
+    credits: true,
     /** Optional details about the social media accounts for this site. */
-    social: { github: 'https://github.com/Sejolyn', email: 'sejolyn@foxmail.com' }
+    social: { github: 'https://github.com/cworld1/astro-theme-pure' }
   },
 
   content: {
