@@ -48,8 +48,8 @@ export const theme: ThemeUserConfig = {
   header: {
     menu: [
       { title: 'Blog', link: '/blog' },
-      { title: 'Projects', link: '/projects' },
-      { title: 'Links', link: '/links' },
+      // { title: 'Projects', link: '/projects' },
+      // { title: 'Links', link: '/links' },
       { title: 'About', link: '/about' }
     ]
   },
@@ -58,24 +58,25 @@ export const theme: ThemeUserConfig = {
   footer: {
     // Year format
     year: `© ${new Date().getFullYear()}`,
-    // year: `© 2019 - ${new Date().getFullYear()}`,
+    // year: `© 2025 - ${new Date().getFullYear()}`,
     links: [
       // Registration link
       {
-        title: 'Moe ICP 114514',
-        link: 'https://icp.gov.moe/?keyword=114514',
-        style: 'text-sm' // Uno/TW CSS class
-      },
-      {
-        title: 'Travelling',
-        link: 'https://www.travellings.cn/go.html',
-        style: 'text-sm'
-      },
+        title: '萌 ICP 20254190',
+        link: 'https://icp.gov.moe/?keyword=20254190',
+        style: 'text-xs text-muted-foreground' // Uno/TW CSS class
+      }
+      // {
+      //   title: 'Travelling',
+      //   link: 'https://www.travellings.cn/go.html',
+      //   style: 'text-sm'
+      // },
     ],
     /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
-    credits: true,
+    credits: false,
     /** Optional details about the social media accounts for this site. */
-    social: { github: 'https://github.com/cworld1/astro-theme-pure' }
+    social: { github: 'https://github.com/Sejolyn/Memo', 
+              email: 'mailto:sejolyn@foxmail.com' }
   },
 
   content: {
@@ -97,7 +98,7 @@ export const theme: ThemeUserConfig = {
 export const integ: IntegrationUserConfig = {
   // Links management
   // See: https://astro-pure.js.org/docs/integrations/links
-  links: {
+  /* links: {
     // Friend logbook
     logbook: [
       { date: '2025-03-16', content: 'Is there a leakage?' },
@@ -113,7 +114,7 @@ export const integ: IntegrationUserConfig = {
       { name: 'Link', val: 'https://astro-pure.js.org/' },
       { name: 'Avatar', val: 'https://astro-pure.js.org/favicon/favicon.ico' }
     ]
-  },
+  }, */
   // Enable page search function
   pagefind: true,
   // Add a random quote to the footer (default on homepage footer)
