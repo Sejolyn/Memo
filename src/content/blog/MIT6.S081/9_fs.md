@@ -1,6 +1,6 @@
 ---
 title: MIT6.S081 Lab fs
-description: '对文件系统的inode扩容，并实现软链接功能'
+description: '对文件系统的inode扩容，并实现软链接功能。'
 publishDate: 2025-08-15 17:58:31
 tags:
   - MIT6.S081

@@ -1,6 +1,6 @@
 ---
 title: MIT6.S081 Lab lock
-description: ‘通过更细致的数据结构和锁划分来减少锁的争用，从而提升执行效率'
+description: '通过更细致的数据结构和锁划分来减少锁的争用，从而提升执行效率。'
 publishDate: 2025-08-15 04:19:20
 tags:
   - MIT6.S081
