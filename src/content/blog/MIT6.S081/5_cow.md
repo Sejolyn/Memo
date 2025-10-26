@@ -7,10 +7,6 @@ tags:
 
 ---
 
-
-
-
-
 - 参考博客：[Xiao Fan](https://fanxiao.tech/posts/2021-03-02-mit-6s081-notes/#85-lab-6-copy-on-write-fork)
 - [RISC-V手册](http://staff.ustc.edu.cn/~llxx/cod/reference_books/RISC-V-Reader-Chinese-v2p12017.pdf)
 
@@ -57,7 +53,7 @@ tags:
 
 其中，在 PTE 的 RSW 处可以设置为我们的 `PTE_COW` 位，以表明该物理页是COW Fork机制。
 
-![image-20250731142016639](/images/MIT6.S081/5_cow/1.png)
+![PTE](/public//images/MIT6.S081/5_cow/PTE.png)
 
 在 riscv.h 中添加 `PTE_COW` 位：
 ```c
