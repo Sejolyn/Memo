@@ -12,16 +12,13 @@ tags:
 ## Large files
 
 实验目的：
+
 - 扩充 inode 的 `addrs` 数组，为其减少一个直接块，增加一个二级间接块，其存储一级间接块的地址
 - 修改 `bmap()`，使得其能定位二级间接块里的数据块
 - 修改 `itrunc()`，使其能释放二级间接块及其中的所有块
 
-
-
 `addrs` 数组的结构：
-![image-20250731142016639](/images/MIT6.S081/9_fs/1.png)
-
-
+![image-20250731142016639](/public/images/6.s081/9_fs/1.png)
 
 首先修改全局变量以及 `struct inode/dinode`：
 
@@ -56,10 +53,6 @@ struct inode {
 	uint addrs[NDIRECT+2];
 };
 ```
-
-
-
-
 
 接着为 `bmap()` 增加索引二级间接块的逻辑：
 
@@ -119,8 +112,6 @@ bmap(struct inode *ip, uint bn)
 }
 ```
 
-
-
 修改 `itrunc()` 的逻辑，使其能够释放二级间接块：
 
 ```c
@@ -179,28 +170,16 @@ itrunc(struct inode *ip)
 }
 ```
 
-
-
-
-
 ## Symbolic links
 
-
-
 硬链接是同一个文件的多个目录入口，指向相同的 inode；而软链接则是一个独立的文件，存储的是目标文件的路径。
-
-
 
 实验目的：
 
 - 添加并实现 `symlink(char *target, char *path)` 系统调用，使得为 `target` 创建 `path` 软链接
 - 修改 `open()`，添加对软链接的处理
 
-
-
 对于 `symlink()` 系统调用的添加不再赘述。
-
-
 
 在 fcntl. h 中添加 `O_NOFOLLOW`，由于不能与已有标志重叠，所以设置为 `0x800`
 
@@ -212,8 +191,6 @@ itrunc(struct inode *ip)
 #define O_TRUNC 0x400
 #define O_NOFOLLOW 0x800
 ```
-
-
 
 `symlink()` 的实现：创建一个 inode，设置类型为 `T_SYMLINK`，然后向 inode 中写入 `path` 即可
 
@@ -246,8 +223,6 @@ sys_symlink(void)
   return 0;
 }
 ```
-
-
 
 在 `sys_open` 中添加对符号链接的处理：
 
@@ -291,4 +266,5 @@ sys_open(void)
 	...
 }
 ```
+
 - 文件路径指向一个软链接时，系统需要递归地解析链接目标，直到找到最终的非链接文件或达到最大递归深度

@@ -6,7 +6,7 @@ tags:
   - MIT6.S081
 ---
 
-## 1 Speed up system calls
+## Speed up system calls
 
 需要在创建进程是在 USYSCALL 处映射一个只读页面，在改位置存储一个 `struct usyscall`，并初始化为当前进程的 PID。
 ```c
@@ -65,7 +65,7 @@ void proc_freepagetable(pagetable_t pagetable, uint64 sz)
 ```
 
 
-## 2 Print a page table
+## Print a page table
 
 定义一个 `vmprint()` 的函数，接受一个 `pagetable_t` 参数，并以指定格式打印该页表。
 
@@ -117,7 +117,7 @@ void vmprint(pagetable_t pagetable) {
 #define PTE2PA(pte) (((pte) >> 10) << 12)
 ```
 
-## 3 Detecting which pages have been accessed
+## Detecting which pages have been accessed
 
 首先需要在 kernel/riscv. h 中定义 PTE_A。根据 RISC-V 手册，PTE_A 是第 6 位：
 ![[Pasted image 20250722062258.png]] 

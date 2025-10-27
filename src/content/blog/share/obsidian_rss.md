@@ -21,16 +21,14 @@ tags:
 下面是我的使用界面。
 
 在Dashboard界面，可以看到已订阅的RSS源列表，以及各个源的最新文章预览。
-![RSS Dashboard 界面](/public/images/Share/rss_dashboard.png)
+![RSS Dashboard 界面](/public/images/share/rss_dashboard.png)
 
 在Discover界面，可以搜索一些已有的RSS源，方便添加订阅。
-![RSS Discover 界面](/public/images/Share/rss_discover.png)
-
+![RSS Discover 界面](/public/images/share/rss_discover.png)
 
 ## RSS获取
 
 插件本身并不提供RSS源，需要用户自行添加RSS源地址。推荐在[RSShub](https://docs.rsshub.app/zh/guide/)获取各种网站的RSS源地址，RSShub支持生成大量网站的RSS源，非常实用。
-
 
 ## 参考链接
 
@@ -39,4 +37,3 @@ tags:
 - [obsidian-rss-dashboard
 ](https://github.com/amatya-aditya/obsidian-rss-dashboard)
 - [RSSHub](https://docs.rsshub.app/zh/guide/)
-

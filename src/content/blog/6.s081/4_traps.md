@@ -8,7 +8,7 @@ tags:
 
 
 
-## 1 Backtrace
+## Backtrace
 
 题目要求：编译器会在每个栈帧中放置一个帧指针，该指针保存着调用者帧指针的地址。您的 backtrace 应利用这些帧指针遍历堆栈，并打印每个栈帧中保存的返回地址。
 
@@ -59,7 +59,7 @@ panic(char *s)
 ```
 
 
-## 2 Alarm
+## Alarm
 功能概述：
 1. `sigalarm(n, fn)` ：
     - 设置每隔 `n` 个 CPU 时间 ticks 调用一次 `fn` 函数
@@ -77,7 +77,7 @@ panic(char *s)
 3. 由于我们将 `usertrap` 的下一步变成了执行 `periodic` 处理函数而不是 `usertrapret`，因此需要在 `periodic` 中调用 `sigreturn()` 函数，从而进入恢复阶段
 4. 在 `sigreturn()` 中我们需要将保存的上下文恢复和重置一些状态
 
-### 2.1 一般方案
+### 一般方案
 
 初始设置：
 - 在 `MAKEFILE` 的添加 `alarmtest.c`；
@@ -163,7 +163,7 @@ uint64 sys_sigretrun(void) {
 ```
 
 
-### 2.2 优化
+### 优化
 
 由于处理函数 `periodic` 的逻辑非常简答，不会修改其它的用户寄存器，因此不需要保存全部的用户寄存器，而是仅保存几个重要的寄存器。
 
@@ -227,6 +227,6 @@ uint64 sys_sigretrun(void) {
 
 
 
-## 3 参考
+## 参考
 
 - [Xiao Fan](https://fanxiao.tech/posts/2021-03-02-mit-6s081-notes/#55-lab-4-traps)

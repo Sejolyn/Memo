@@ -10,11 +10,10 @@ tags:
 - 参考博客：[Xiao Fan](https://fanxiao.tech/posts/2021-03-02-mit-6s081-notes/#85-lab-6-copy-on-write-fork)
 - [RISC-V手册](http://staff.ustc.edu.cn/~llxx/cod/reference_books/RISC-V-Reader-Chinese-v2p12017.pdf)
 
-
-
-# 1 Copy-on-Write Fork 介绍
+## Copy-on-Write Fork 介绍
 
 **基本流程**
+
 1. 初始状态（`fork()` 刚完成）
     - 父进程与子进程共享所有的物理页，但它们的 PTE 标记为只读（`PTE_W=0`）
     - 任何写入尝试都会触发存储页错误
@@ -26,8 +25,6 @@ tags:
             - 复制原页内容到新页
             - 修改当前进程的 PTE，使其指向新页，并设置 `PTE_W=1`
     - 恢复执行：重新执行触发页错误的执行，此时写入会成功
-
-
 
 **关键机制**
 
@@ -42,25 +39,23 @@ tags:
     - 如果仅当前进程引用该页（引用计数`=1`），则无需复制，直接恢复 `PTE_W=1` 即可
         - 例如：父进程 `fork()` 后，子进程 `exec()` 丢弃了大部分内存，此时父进程写入自己的内存时可能无需复制
 
-
-
-# 2 uvmcopy ()
+## uvmcopy()
 
 在 kernel/vm.c 的 `uvmcopy()`函数中，需要进行以下修改：
+
 - 将父进程的物理页映射到子进程，而不是分配新页面；
 - 清除父进程和子进程的 `PTE_W` 位
 - 设置新添加的 `PTE_COW`位
 
 其中，在 PTE 的 RSW 处可以设置为我们的 `PTE_COW` 位，以表明该物理页是COW Fork机制。
 
-![PTE](/public//images/MIT6.S081/5_cow/PTE.png)
+![PTE](/public/images/6.s081/5_cow/PTE.png)
 
 在 riscv.h 中添加 `PTE_COW` 位：
+
 ```c
 #define PTE_COW   (1L << 8)
 ```
-
-
 
 修改 `uvmcopy()`函数：
 
@@ -92,11 +87,10 @@ uvmcopy(pagetable_t old, pagetable_t new, uint64 sz)
 }
 ```
 
-
-
-# 3 usertrap ()
+## usertrap()
 
 接下来在 kernel/trap.c 的 `usertrap()` 函数中添加对存储页错误的处理：
+
 ```c
 } else if (r_scause() == 15) { // 存储页错误
     uint64 va = r_stval();
@@ -110,13 +104,12 @@ uvmcopy(pagetable_t old, pagetable_t new, uint64 sz)
 
 注意这里需要检查虚拟地址是否越界，或者处于 guard page 当中，否则 usertests 无法通过。
 
-
-
-# 4 kalloc. c
+## kalloc.c
 
 按照 COW 的逻辑，我们需要维护每一个物理页的引用计数 `refcnt`。
 
-在 kalloc. c 中声明数据结构和辅助函数：
+在 `kalloc.c` 中声明数据结构和辅助函数：
+
 ```c
 struct {
   struct spinlock lock;
@@ -200,9 +193,8 @@ int refcnt_new(uint64 va, pagetable_t pagetable) {
     return -1;
 }
 ```
+
 - `refcnt_new()` 中只能使用 `kalloc_nolock()`，因为其已经声明 `acquire(&refcnt.lock)`，如果直接使用 `kalloc()`，里面会再一次声明，便会触发 `panic("acquire")`
-
-
 
 `kinit()` 中初始化 `refcnt`：
 
@@ -216,8 +208,6 @@ kinit()
   freerange(end, (void*)PHYSTOP);
 }
 ```
-
-
 
 在 `kalloc()` 初始化引用计数：
 
@@ -241,8 +231,6 @@ void *kalloc(void)
   return (void*)r;
 }
 ```
-
-
 
 修改 `kfree()` 的逻辑，只有引用计数为 0 时才释放物理内存：
 
@@ -277,11 +265,7 @@ kfree(void *pa)
   kmem.freelist = r;
   release(&kmem.lock);
 }
-
-
 ```
-
-
 
 更新 `kalloc()` 函数，使其分配内存时初始化计数：
 
@@ -305,11 +289,10 @@ void *kalloc(void)
 }
 ```
 
-
-
-# 5 copyout ()
+## copyout ()
 
 最后需要修改 `copyout()`，使其当目标页为 COW 页时，分配一个新的物理页：
+
 ```c
 int copyout(pagetable_t pagetable, uint64 dstva, char *src, uint64 len)
 {
@@ -340,6 +323,3 @@ int copyout(pagetable_t pagetable, uint64 dstva, char *src, uint64 len)
   return 0;
 }
 ```
-
-
-

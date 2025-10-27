@@ -182,9 +182,7 @@ void child(int *pl) {
 
 在目录树中查找所有具有特定名称的文件，将其打印出来。此函数重点考查文件系统。
 
-
-
-位于 *fs.h* 中的 `struct dirent`，用来描述目录条目：
+位于 `fs.h` 中的 `struct dirent`，用来描述目录条目：
 
 ```c
 // 文件名的最大长度
@@ -197,8 +195,7 @@ struct dirent {
 ```
 
 
-
-位于 stat.h 中的 `struct stat`，用来描述文件元数据：
+位于 `stat.h` 中的 `struct stat`，用来描述文件元数据：
 
 ```c
 #define T_DIR     1   // Directory
@@ -216,7 +213,7 @@ struct stat {
 
 
 
-依旧是通过递归实现，代码与 *ls.c* 存在大量重叠：
+依旧是通过递归实现，代码与 `ls.c` 存在大量重叠：
 
 ```c
 #include "kernel/types.h"
@@ -286,9 +283,6 @@ void find(char *path, char *file) {
 
 
 ```
-
-
-
 
 
 ## xargs
