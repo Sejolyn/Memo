@@ -18,7 +18,7 @@ tags:
 - 修改 `itrunc()`，使其能释放二级间接块及其中的所有块
 
 `addrs` 数组的结构：
-![image-20250731142016639](/public/images/6.s081/9_fs/1.png)
+![image-20250731142016639](/images/6.s081/9_fs/1.png)
 
 首先修改全局变量以及 `struct inode/dinode`：
 
