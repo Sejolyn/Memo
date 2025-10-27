@@ -3,7 +3,7 @@ title: TCP拥塞控制中的快速恢复算法
 description: '记录自己关于TCP拥塞控制中快速恢复算法的理解。'
 publishDate: 2025-10-26 21:18:39
 tags:
-  - Computer Network
+  - network
 ---
 
 当网络出现拥塞，TCP会进行数据段重传。存在两种重场景：超时重传和快速重传。

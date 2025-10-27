@@ -3,7 +3,7 @@ title: RSS阅读与管理
 description: '在Obsidian中集成RSS功能，实现RSS的集中管理和阅读。'
 publishDate: 2025-10-26 20:34:54
 tags:
-  - Share
+  - share
 ---
 
 尝试了很多RSS阅读器后，发现Obsidian存在插件——RSS Dashboard，可以实现RSS的集中管理和阅读，上手后觉得效果还不错，作此分享。

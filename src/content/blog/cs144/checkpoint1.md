@@ -3,7 +3,8 @@ title: CS144 Checkpoint1
 publishDate: 2025-09-07 00:06:45
 description: '实现TCP层次结构中的Reassembler（重组器），用于将分组拼接成字节流。'
 tags:
-  - CS144
+  - cs144
+  - network
 ---
 
 整个 cs144 的实验结构层次图如下：

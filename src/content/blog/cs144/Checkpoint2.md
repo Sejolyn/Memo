@@ -3,7 +3,8 @@ title: CS144 Checkpoint2
 publishDate: 2025-09-16 11:23:11
 description: '实现序号转换以及接收端的receive/send函数。'
 tags:
-  - CS144
+  - cs144
+  - network
 ---
 
 整个 cs144 的实验结构层次图如下：
