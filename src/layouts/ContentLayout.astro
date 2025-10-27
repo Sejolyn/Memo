@@ -153,3 +153,8 @@ const { meta, highlightColor, back = '/', ...props } = Astro.props
     }
   }
 </style>
+<style is:global>
+  /* Hide sponsorship link in post footer (from astro-pure Copyright) */
+  div:has(> a[href="/projects#sponsorship"]) { display: none !important; }
+  a[href="/projects#sponsorship"] { display: none !important; }
+</style>
