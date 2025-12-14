@@ -21,10 +21,10 @@ tags:
 下面是我的使用界面。
 
 在Dashboard界面，可以看到已订阅的RSS源列表，以及各个源的最新文章预览。
-![RSS Dashboard 界面](/images/share/rss_dashboard.png)
+![RSS Dashboard 界面](./images/rss_dashboard.png)
 
 在Discover界面，可以搜索一些已有的RSS源，方便添加订阅。
-![RSS Discover 界面](/images/share/rss_discover.png)
+![RSS Discover 界面](./images/rss_discover.png)
 
 ## RSS获取
 

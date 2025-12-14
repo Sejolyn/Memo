@@ -28,13 +28,13 @@ tags:
  	- 退出快速恢复，进入**拥塞避免算法
 
 下图展示了 TCP Reno 的拥塞控制算法（来源于小林coding），包括慢启动、拥塞避免、快速重传和快速恢复：
-![示意图](/images/share/tcp_reno.png)
+![示意图](./images/tcp_reno.png)
 
 存在两点疑问：
 
 ## 1. 为什么收到重复 ACK 时，cwnd 增加 1？
 
-![TCP发送窗口](/images/share/tcp_window.png)
+![TCP发送窗口](./images/tcp_window.png)
 
 该机制被称为**窗口膨胀**。
 
