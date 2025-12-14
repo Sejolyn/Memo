@@ -159,7 +159,7 @@ export const integ: IntegrationUserConfig = {
       comment: true,
       locale: {
         reaction0: 'Like',
-        placeholder: '实质性的东西，眼睛是看不见的。请留下你的本质观点。'
+        placeholder: 'Leave a comment here...',
       },
       imageUploader: false
     }
