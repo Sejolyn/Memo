@@ -49,7 +49,7 @@ export const theme: ThemeUserConfig = {
     menu: [
       { title: 'Blog', link: '/blog' },
       // { title: 'Projects', link: '/projects' },
-      // { title: 'Links', link: '/links' },
+      { title: 'Links', link: '/links' },
       { title: 'About', link: '/about' }
     ]
   },
@@ -98,23 +98,20 @@ export const theme: ThemeUserConfig = {
 export const integ: IntegrationUserConfig = {
   // Links management
   // See: https://astro-pure.js.org/docs/integrations/links
-  /* links: {
+  links: {
     // Friend logbook
     logbook: [
-      { date: '2025-03-16', content: 'Is there a leakage?' },
-      { date: '2025-03-16', content: 'A leakage of what?' },
-      { date: '2025-03-16', content: 'I have a full seat of water, like, full of water!' },
-      { date: '2025-03-16', content: 'Must be the water.' },
-      { date: '2025-03-16', content: "Let's add that to the words of wisdom." }
+      { date: '2025-12-20', content: '友链功能恢复上线！' },
+      { date: '2025-12-20', content: '欢迎交换友链～' }
     ],
     // Yourself link info
     applyTip: [
       { name: 'Name', val: theme.title },
       { name: 'Desc', val: theme.description || 'Null' },
-      { name: 'Link', val: 'https://astro-pure.js.org/' },
-      { name: 'Avatar', val: 'https://astro-pure.js.org/favicon/favicon.ico' }
+      { name: 'Link', val: 'https://sejolyn.fyi/' },
+      { name: 'Avatar', val: 'https://sejolyn.fyi/favicon/favicon.ico' }
     ]
-  }, */
+  },
   // Enable page search function
   pagefind: true,
   // Add a random quote to the footer (default on homepage footer)
