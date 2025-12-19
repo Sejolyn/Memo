@@ -109,7 +109,7 @@ export const integ: IntegrationUserConfig = {
       { name: 'Name', val: theme.title },
       { name: 'Desc', val: theme.description || 'Null' },
       { name: 'Link', val: 'https://sejolyn.fyi/' },
-      { name: 'Avatar', val: 'https://sejolyn.fyi/favicon/favicon.ico' }
+      { name: 'Avatar', val: 'https://sejolyn.fyi/avatar.jpg' }
     ]
   },
   // Enable page search function
