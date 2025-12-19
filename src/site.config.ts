@@ -119,7 +119,7 @@ export const integ: IntegrationUserConfig = {
   quote: {
     // 使用一言 API (中文随机句子)
     // https://developer.hitokoto.cn/sentence/#%E8%AF%B7%E6%B1%82%E5%9C%B0%E5%9D%80
-    server: 'https://v1.hitokoto.cn/?c=i',
+    server: 'https://v1.hitokoto.cn/?c=b&c=a&c=d&c=j&c=h&max_length=60',
     target: `(data) => data.hitokoto || 'Loading...'`
     // 如果想要英文引言，可以用下面这个：
     // https://github.com/lukePeavey/quotable
