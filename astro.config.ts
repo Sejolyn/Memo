@@ -1,9 +1,9 @@
-import { rehypeHeadingIds } from '@astrojs/markdown-remark'
 import vercel from '@astrojs/vercel'
 import AstroPureIntegration from 'astro-pure'
 import { defineConfig } from 'astro/config'
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
+import rehypeSlug from 'rehype-slug'
 
 // Others
 // import { visualizer } from 'rollup-plugin-visualizer'
@@ -75,7 +75,7 @@ export default defineConfig({
     remarkPlugins: [remarkMath],
     rehypePlugins: [
       [rehypeKatex, {}],
-      rehypeHeadingIds,
+      rehypeSlug,
       [
         rehypeAutolinkHeadings,
         {
