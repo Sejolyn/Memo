@@ -1,8 +1,8 @@
 // @ts-check
 
-import eslint from '@eslint/js/dist/eslint.js'
+import eslint from '@eslint/js'
 import eslintPluginAstro from 'eslint-plugin-astro'
-import tseslint from 'typescript-eslint/dist/eslint-plugin.js'
+import tseslint from 'typescript-eslint'
 
 export default [
   eslint.configs.recommended,
