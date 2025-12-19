@@ -16,12 +16,12 @@ const headings = [
 <PageLayout title='About' {headings} comment>
   <p>Backend Developer (in training) / Lifelong Learner</p>
   <p>
-    你好，我是 Sejolyn。一名大二的CS学生，目前专注于本科就业。 这个网站 'The Sejolyn Memo'
-    (sejolyn.fyi) 是我用来记录学习和构建个人知识体系的地方。
+    你好，我是 Sejolyn，一名大二的CS学生。 这个网站 'The Sejolyn Memo' (sejolyn.fyi)
+    是我用来记录学习的地方。
   </p>
   <p>
     My motto: It is the time you have wasted for your rose that makes your rose so important。
-    <Spoiler>剧透：'Sejolyn' 这个名字其实是我根据 "4190" 的中文发音联想出来的。</Spoiler>
+    <!-- <Spoiler>剧透：'Sejolyn' 这个名字其实是我根据 "4190" 的中文发音联想出来的。</Spoiler> -->
   </p>
 
   <!-- 赞助 -->
@@ -30,11 +30,13 @@ const headings = [
   {/* general-talk */}
   <h2 id='hobbies'>Hobbies</h2>
   <ul>
-    {/*<li>
+    {
+      /*<li>
       <strong>健身 (Fitness):</strong> 健身时能让我短暂的隔绝外部世界，专注于自己。
-    </li> */}
+    </li> */
+    }
     <li>
-      <strong>持续学习 (Learning):</strong> 除了积极学习就业所需的技术栈之外，还会涉猎一些心理等领域的知识。
+      <strong>持续学习 (Learning):</strong> 除了积极学习就业所需的技术栈之外，还会涉猎一些心理学等领域的知识。
     </li>
     <li>
       <strong>知识管理 (Knowledge Management):</strong> 热衷于使用 Obsidian 处理知识输入，记录自己的所见和思考。
@@ -44,18 +46,18 @@ const headings = [
   {/* tools */}
   <h2 id='tools'>Tools</h2>
   <p>我当前使用的工具：</p>
-  <!-- <ToolSection
+  <ToolSection
     class='mb-5'
     title='Design'
     tools={[
       {
-        name: 'Photoshop',
+        name: 'Excalidraw',
         description: 'Picture Editing',
-        href: 'https://www.adobe.com/products/photoshop',
-        icon: import('@/assets/tools/photoshop.svg?raw')
-      },
+        href: 'https://excalidraw.com/',
+        icon: import('@/assets/tools/excalidraw.svg?raw')
+      }, /*
       {
-        name: 'Illustrator',
+        name: 'next-draw-io',
         description: 'Vector Drawing',
         href: 'https://www.adobe.com/products/illustrator',
         icon: import('@/assets/tools/illustrator.svg?raw')
@@ -71,9 +73,9 @@ const headings = [
         description: 'Video Editing',
         href: 'https://www.adobe.com/products/premiere',
         icon: import('@/assets/tools/premiere.svg?raw')
-      }
+      }*/
     ]}
-  /> -->
+  />
   <ToolSection
     class='mb-5'
     title='Productivity'
@@ -126,18 +128,18 @@ const headings = [
         href: 'https://code.visualstudio.com/',
         icon: import('@/assets/tools/vscode.svg?raw')
       },
-      /* {
+      {
         name: 'Neovim',
         description: 'IDE',
         href: 'https://neovim.io/',
         icon: import('@/assets/tools/neovim.svg?raw')
-      } */
-     {
-      name: 'Warp',
-      description: 'Terminal',
-      href: 'https://www.warp.dev/',
-      icon: import('@/assets/tools/warp.svg?raw')
-     }
+      },
+      {
+        name: 'Warp',
+        description: 'Terminal',
+        href: 'https://www.warp.dev/',
+        icon: import('@/assets/tools/warp.svg?raw')
+      }
     ]}
   />
   <ToolSection
