@@ -60,17 +60,17 @@ export const theme: ThemeUserConfig = {
     year: `© ${new Date().getFullYear()}`,
     // year: `© 2025 - ${new Date().getFullYear()}`,
     links: [
-      // Registration link
+      // Registration links
       {
-        title: '萌 ICP 20254190',
+        title: '皖ICP备2025105563号-1',
+        link: 'https://beian.miit.gov.cn/',
+        style: 'text-sm text-muted-foreground hover:text-foreground transition-colors'
+      },
+      {
+        title: '萌ICP备20254190号',
         link: 'https://icp.gov.moe/?keyword=20254190',
-        style: 'text-xs text-muted-foreground' // Uno/TW CSS class
+        style: 'text-sm text-muted-foreground hover:text-foreground transition-colors'
       }
-      // {
-      //   title: 'Travelling',
-      //   link: 'https://www.travellings.cn/go.html',
-      //   style: 'text-sm'
-      // },
     ],
     /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
     credits: false,
