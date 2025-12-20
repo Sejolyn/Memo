@@ -59,18 +59,16 @@ export const theme: ThemeUserConfig = {
     // Year format - showing website existence period
     year: `2024 - ${new Date().getFullYear()}`,
     links: [
-      // Registration links (position 1 to avoid & symbol)
+      // Registration links
       {
         title: '皖ICP备2025105563号-1',
         link: 'https://beian.miit.gov.cn/',
-        style: 'text-sm text-muted-foreground hover:text-foreground transition-colors',
-        pos: 1
+        style: 'text-sm text-muted-foreground hover:text-foreground transition-colors'
       },
       {
         title: '萌ICP备20254190号',
         link: 'https://icp.gov.moe/?keyword=20254190',
-        style: 'text-sm text-muted-foreground hover:text-foreground transition-colors',
-        pos: 1
+        style: 'text-sm text-muted-foreground hover:text-foreground transition-colors'
       }
     ],
     /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
