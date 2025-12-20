@@ -59,7 +59,7 @@ tags:
 
 卡片背面：
 
-![image-20251220151420180](/Users/sejolyn/memo/src/content/blog/share/images/back-side.png)
+![卡片背面](images/back-side.jpeg)
 
 
 
