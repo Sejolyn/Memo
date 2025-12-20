@@ -5,7 +5,6 @@ import config from 'virtual:config'
 import { Collapse, Timeline } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import FriendList from '@/components/links/FriendList.astro'
-import FloatingSignature from '@/components/signature/FloatingSignature.astro'
 
 const headings = [
   { depth: 2, slug: 'common-links', text: 'Common Links' },
@@ -59,7 +58,4 @@ const linkEditPage = 'https://github.com/Sejolyn/Memo/blob/main/public/links.jso
     <li>请确保你的站点活着. </li>
     <li>博客内容不违反国家法律. </li>
   </ul>
-
-  <!-- 右下角浮动签名 -->
-  <FloatingSignature />
 </PageLayout>
