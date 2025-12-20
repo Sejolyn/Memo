@@ -4,6 +4,7 @@ import PageLayout from '@/layouts/CommonPage.astro'
 import Substats from '@/components/about/Substats.astro'
 import ToolSection from '@/components/about/ToolSection.astro'
 import MySignature from '@/components/signature/MySignature.astro'
+import FloatingSignature from '@/components/signature/FloatingSignature.astro'
 
 const headings = [
   { depth: 2, slug: 'hobbies', text: 'Hobbies' },
@@ -254,4 +255,7 @@ const headings = [
       博客设计参考：<a href='https://arthals.ink/' target='_blank'>Arthals' ink</a>
     </li>
   </ul>
+
+  <!-- 右下角浮动签名 -->
+  <FloatingSignature />
 </PageLayout>
