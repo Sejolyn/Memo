@@ -1,5 +1,5 @@
 ---
-title: Anki+查拉查词+HypperTTS进行英语学习
+title: 英语学习：Anki+查拉查词+HypperTTS
 description: '学习英语的配置。'
 publishDate: 2025-12-19 23:37:44
 tags:

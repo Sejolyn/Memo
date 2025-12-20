@@ -1,5 +1,5 @@
 ---
-title: RSS阅读与管理
+title: Obsidian：RSS阅读与管理
 description: '在Obsidian中集成RSS功能，实现RSS的集中管理和阅读。'
 publishDate: 2025-10-26 20:34:54
 tags:
