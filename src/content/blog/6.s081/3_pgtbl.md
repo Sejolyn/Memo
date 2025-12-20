@@ -4,6 +4,7 @@ publishDate: 2025-07-25 18:48:14
 description: '探索 Xv6 页表机制，修改页表映射并打印信息。'
 tags:
   - MIT6.S081
+  - os
 ---
 
 ## Speed up system calls

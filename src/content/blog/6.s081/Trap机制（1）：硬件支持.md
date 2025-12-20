@@ -4,6 +4,7 @@ description: '介绍XV6中Trap机制的RISC-V硬件支持部分。'
 publishDate: 2025-08-18 22:18:13
 tags:
   - MIT6.S081
+  - os
 
 
 ---
@@ -34,7 +35,7 @@ RISC-V 硬件会对所有 trap 类型（定时器中断除外）执行以下操�
 	- 将当前模式设置为 **Supervisor Mode**，以便执行内核中的 trap handler。
 6. **跳转到 trap handler**
 	- 将 `stvec` 的地址加载到 `pc` 。
-以上步骤为硬件操作，在发生 trap 后自动执行，并没有显式代码。
+	以上步骤为硬件操作，在发生 trap 后自动执行，并没有显式代码。
 
 >  中断屏蔽检查中为什么区别对待？
 

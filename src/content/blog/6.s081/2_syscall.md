@@ -4,6 +4,7 @@ publishDate: 2025-07-21 17:26:24
 description: '尝试在 Xv6 中添加系统调用，理解用户态与内核态的交互。'
 tags:
   - MIT6.S081
+  - os
 ---
 
 

@@ -3,7 +3,7 @@ title: '2025-06-08'
 description: '开始准备期末考试，总结一下此前的学习。'
 publishDate: 2025-06-08 21:18:41
 tags:
-  - Phase Recap
+  - recap
 
 ---
 

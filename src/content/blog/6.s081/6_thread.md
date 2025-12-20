@@ -4,7 +4,7 @@ description: '实现线程切换，使用多线程加速程序运行，并实现
 publishDate: 2025-08-09 14:25:15
 tags:
   - MIT6.S081
-
+  - os
 ---
 
 ## Uthread: switching between threads

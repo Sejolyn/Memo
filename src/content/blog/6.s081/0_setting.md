@@ -4,6 +4,7 @@ description: 'MIT6.S081环境配置以及踩坑补充。'
 publishDate: 2025-07-11 04:38:10
 tags:
     - MIT6.S081
+    - os
 
 ---
 
