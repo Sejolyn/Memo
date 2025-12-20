@@ -56,20 +56,21 @@ export const theme: ThemeUserConfig = {
 
   /** Configure the footer of your site. */
   footer: {
-    // Year format
-    year: `© ${new Date().getFullYear()}`,
-    // year: `© 2025 - ${new Date().getFullYear()}`,
+    // Year format - showing website existence period
+    year: `2024 - ${new Date().getFullYear()}`,
     links: [
-      // Registration links
+      // Registration links (position 1 to avoid & symbol)
       {
         title: '皖ICP备2025105563号-1',
         link: 'https://beian.miit.gov.cn/',
-        style: 'text-sm text-muted-foreground hover:text-foreground transition-colors'
+        style: 'text-sm text-muted-foreground hover:text-foreground transition-colors',
+        pos: 1
       },
       {
         title: '萌ICP备20254190号',
         link: 'https://icp.gov.moe/?keyword=20254190',
-        style: 'text-sm text-muted-foreground hover:text-foreground transition-colors'
+        style: 'text-sm text-muted-foreground hover:text-foreground transition-colors',
+        pos: 1
       }
     ],
     /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
