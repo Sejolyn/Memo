@@ -1,0 +1,144 @@
+---
+// 你的个人签名组件 - 在这里替换你自己的签名路径
+const { class: className } = Astro.props
+---
+
+<div class:list={['signature-container', className]}>
+  <svg
+    width="320"
+    height="180"
+    viewBox="0 0 320 180"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="signature-svg"
+  >
+    <!-- 
+      ========================================
+      在下面替换为你自己的签名路径
+      ========================================
+      
+      步骤：
+      1. 访问 https://yqnn.github.io/svg-path-editor/
+      2. 手写你的签名
+      3. 点击 Export，复制 <path d="..."> 中的 d 属性
+      4. 替换下面的 d="..." 部分
+      5. 在浏览器控制台运行：
+         document.querySelector('.my-signature-path').getTotalLength()
+      6. 将得到的数字填入下面的 CSS 中
+    -->
+    
+    <path
+      d="M50,90 Q100,50 150,90 T250,90"
+      stroke="currentColor"
+      stroke-width="3"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="signature-path my-signature-path"
+    />
+    
+    <!-- 如果有多笔画，继续添加 -->
+    <!-- 
+    <path
+      d="你的第二笔路径"
+      stroke="currentColor"
+      stroke-width="3"
+      stroke-linecap="round"
+      class="signature-path my-signature-path-2"
+    />
+    -->
+  </svg>
+</div>
+
+<style>
+  .signature-container {
+    display: inline-block;
+  }
+
+  .signature-svg {
+    width: 100%;
+    height: auto;
+    max-width: 320px;
+  }
+
+  .signature-path {
+    fill: none;
+    opacity: 0;
+  }
+
+  /* 
+    ========================================
+    更新这里的数字为你的路径长度
+    ========================================
+  */
+  .my-signature-path {
+    stroke-dasharray: 300;  /* ← 改成你的路径长度 */
+    stroke-dashoffset: 300; /* ← 改成相同的数字 */
+  }
+
+  /* 如果有第二笔 */
+  /*
+  .my-signature-path-2 {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+  }
+  */
+
+  /* 动画触发 */
+  .signature-container.animate .signature-path {
+    opacity: 1;
+  }
+
+  .signature-container.animate .my-signature-path {
+    animation: draw-signature 0.8s ease-in-out forwards;
+  }
+
+  /* 如果有第二笔，添加延迟 */
+  /*
+  .signature-container.animate .my-signature-path-2 {
+    animation: draw-signature 0.6s ease-in-out 0.8s forwards;
+  }
+  */
+
+  @keyframes draw-signature {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* 响应式 */
+  @media (max-width: 640px) {
+    .signature-svg {
+      max-width: 240px;
+    }
+  }
+</style>
+
+<script>
+  // 页面加载时自动播放
+  document.addEventListener('DOMContentLoaded', () => {
+    const signatures = document.querySelectorAll('.signature-container')
+    signatures.forEach((sig) => {
+      setTimeout(() => {
+        sig.classList.add('animate')
+      }, 500)
+    })
+  })
+
+  // 滚动到视图时播放
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate')
+          }
+        })
+      },
+      { threshold: 0.5 }
+    )
+
+    document.querySelectorAll('.signature-container').forEach((el) => {
+      observer.observe(el)
+    })
+  }
+</script>
