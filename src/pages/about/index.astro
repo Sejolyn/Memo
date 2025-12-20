@@ -3,7 +3,7 @@ import { Button, Collapse, Spoiler, Timeline } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import Substats from '@/components/about/Substats.astro'
 import ToolSection from '@/components/about/ToolSection.astro'
-import Signature from '@/components/signature/Signature.astro'
+import MySignature from '@/components/signature/MySignature.astro'
 
 const headings = [
   { depth: 2, slug: 'hobbies', text: 'Hobbies' },
@@ -25,9 +25,9 @@ const headings = [
     <!-- <Spoiler>剧透：'Sejolyn' 这个名字其实是我根据 "4190" 的中文发音联想出来的。</Spoiler> -->
   </p>
 
-  <!-- 签名动画示例 -->
+  <!-- 签名动画 - Sejolyn -->
   <div class="my-4">
-    <Signature />
+    <MySignature />
   </div>
 
   <!-- 赞助 -->
