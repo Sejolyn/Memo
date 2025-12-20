@@ -3,6 +3,7 @@ import { Button, Collapse, Spoiler, Timeline } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import Substats from '@/components/about/Substats.astro'
 import ToolSection from '@/components/about/ToolSection.astro'
+import Signature from '@/components/signature/Signature.astro'
 
 const headings = [
   { depth: 2, slug: 'hobbies', text: 'Hobbies' },
@@ -23,6 +24,11 @@ const headings = [
     My motto: It is the time you have wasted for your rose that makes your rose so important。
     <!-- <Spoiler>剧透：'Sejolyn' 这个名字其实是我根据 "4190" 的中文发音联想出来的。</Spoiler> -->
   </p>
+
+  <!-- 签名动画示例 -->
+  <div class="my-4">
+    <Signature />
+  </div>
 
   <!-- 赞助 -->
   <!-- <Button title='Sponsor Me' class='w-fit' href='/projects#sponsorship' variant='ahead' /> -->
