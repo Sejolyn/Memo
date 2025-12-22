@@ -4,6 +4,7 @@ import { defineConfig } from 'astro/config'
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
 import rehypeSlug from 'rehype-slug'
+import { remarkAlert } from 'remark-github-blockquote-alert'
 
 // Others
 // import { visualizer } from 'rollup-plugin-visualizer'
@@ -72,7 +73,7 @@ export default defineConfig({
   },
   // Markdown Options
   markdown: {
-    remarkPlugins: [remarkMath],
+    remarkPlugins: [remarkMath, remarkAlert],
     rehypePlugins: [
       [rehypeKatex, {}],
       rehypeSlug,
