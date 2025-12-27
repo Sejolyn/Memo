@@ -19,8 +19,8 @@ tags:
 
 ## 1 技术选型
 
-> [!IMPORTANT]
->
+
+
 > 为什么使用 Redis 来代替 Session？
 
 
@@ -38,8 +38,6 @@ tags:
 
   
 
-> [!IMPORTANT]
->
 > 为什么使用 Hash 存储用户信息，而不是 String？
 
 

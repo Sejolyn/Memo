@@ -1,6 +1,6 @@
 ---
-title: 「苍穹外卖」复盘：WebSocket
-description: '「苍穹外卖」中WebSocket的介绍与使用。'
+title: WebSocket
+description: 'WebSocket的介绍。'
 publishDate: 2025-12-19 22:50:10
 tags:
   - backend
@@ -102,20 +102,3 @@ Upgrade: websocket
 
 - **Ping/Pong**：客户端或服务端会定时发一个很小的数据包（Ping），另一方回复（Pong），以此证明“我还活着，别断我网”。
 
-
-
-## 现实应用
-
-
-
-> 如果部署了多台后端服务器（集群），WebSocket 会出什么问题？
-
-
-
-在苍穹外卖单体版里没问题，但如果部署了两台 Tomcat：
-
-- 商家 A 连上了 **Tomcat 1**。
-- 用户 B 的下单请求打到了 **Tomcat 2**。
-- Tomcat 2 支付成功，调用 `sendToAllClient`。**但是 Tomcat 2 的内存 Map 里没有商家 A 的 Session**
-- **结果**：商家 A 收不到提醒。
-- **解决方案**：引入 **Redis 发布订阅 (Pub/Sub)** 或 **消息队列 (RabbitMQ)**。Tomcat 2 收到订单 -> 发消息给 Redis -> 所有 Tomcat 监听 Redis -> Tomcat 1 收到消息 -> 推送给商家 A。

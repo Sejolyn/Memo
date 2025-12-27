@@ -5,6 +5,7 @@ import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
 import rehypeSlug from 'rehype-slug'
 import { remarkAlert } from 'remark-github-blockquote-alert'
+import remarkObsidianCallout from 'remark-obsidian-callout'
 
 // Others
 // import { visualizer } from 'rollup-plugin-visualizer'
@@ -73,7 +74,7 @@ export default defineConfig({
   },
   // Markdown Options
   markdown: {
-    remarkPlugins: [remarkMath, remarkAlert],
+    remarkPlugins: [remarkMath, remarkAlert, remarkObsidianCallout as any],
     rehypePlugins: [
       [rehypeKatex, {}],
       rehypeSlug,

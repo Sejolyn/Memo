@@ -172,3 +172,95 @@ a {
 .markdown-alert.markdown-alert-caution .markdown-alert-title {
   color: #ef4444;
 }
+
+/* Obsidian Callout - Question (Yellow) */
+blockquote[data-callout="question"] {
+  border-left: 4px solid #eab308 !important;
+  background-color: rgba(234, 179, 8, 0.1) !important;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.375rem;
+}
+
+.dark blockquote[data-callout="question"] {
+  background-color: rgba(234, 179, 8, 0.15) !important;
+}
+
+/* Question callout - title and content on same line */
+blockquote[data-callout="question"] .callout-title {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  color: #eab308 !important;
+  margin-bottom: 0;
+}
+
+blockquote[data-callout="question"] .callout-title-icon svg {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  stroke: #eab308 !important;
+}
+
+blockquote[data-callout="question"] .callout-title-text {
+  color: #eab308 !important;
+}
+
+blockquote[data-callout="question"] .callout-content {
+  display: inline;
+  color: #eab308 !important;
+  margin-left: 0.5rem;
+}
+
+blockquote[data-callout="question"] .callout-content p {
+  display: inline;
+  margin: 0;
+  color: #eab308 !important;
+}
+
+/* Preserve blank lines - add spacing between paragraphs */
+.prose p + p {
+  margin-top: 1.5em;
+}
+
+/* Preserve multiple line breaks */
+.prose br + br {
+  display: block;
+  content: '';
+  margin-top: 1em;
+}
+
+/* Preserve whitespace for tree structures */
+.prose pre {
+  white-space: pre-wrap;
+  word-break: keep-all;
+}
+
+.prose code {
+  white-space: pre-wrap;
+  font-family: 'Monaco', 'Courier New', monospace;
+}
+
+/* Fix code block colors */
+/* 1. Fix plaintext code blocks - ensure readable color in light mode */
+.prose pre code {
+  color: hsl(var(--foreground)) !important;
+}
+
+/* 2. Fix inline code - ensure readable in both light and dark mode */
+.prose :not(pre) > code {
+  color: hsl(var(--foreground)) !important;
+  background-color: hsl(var(--muted)) !important;
+}
+
+/* Ensure proper contrast for shiki highlighted code */
+.prose pre.shiki,
+.prose pre.shiki code {
+  background-color: transparent !important;
+}
+
+/* Dark mode specific fixes */
+.dark .prose :not(pre) > code {
+  color: hsl(var(--foreground)) !important;
+  background-color: hsl(var(--muted)) !important;
+}

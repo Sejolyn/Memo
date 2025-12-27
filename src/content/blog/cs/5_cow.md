@@ -50,7 +50,7 @@ tags:
 
 其中，在 PTE 的 RSW 处可以设置为我们的 `PTE_COW` 位，以表明该物理页是COW Fork机制。
 
-![PTE](./images/5_cow/PTE.png)
+
 
 在 riscv.h 中添加 `PTE_COW` 位：
 

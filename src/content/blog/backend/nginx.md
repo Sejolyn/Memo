@@ -1,6 +1,6 @@
 ---
-title: 「苍穹外卖」复盘：Nginx
-description: '苍穹外卖中Nginx的介绍与应用。'
+title: Nginx
+description: 'Nginx的介绍与应用。'
 publishDate: 2025-12-19 22:28:27
 tags:
   - backend

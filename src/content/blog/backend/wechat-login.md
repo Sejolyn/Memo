@@ -1,6 +1,6 @@
 ---
-title: 「苍穹外卖」复盘：微信小程序登陆
-description: '「苍穹外卖」中微信小程序登陆的流程。'
+title: 微信小程序登陆
+description: '微信小程序登陆的流程。'
 publishDate: 2025-12-19 22:11:13
 tags:
   - backend

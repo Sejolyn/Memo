@@ -1,6 +1,6 @@
 ---
-title: 「苍穹外卖」复盘：Redis缓存
-description: 'Redis缓存在「苍穹外卖」中的应用与扩展。'
+title: 「苍穹外卖」缓存优化
+description: 'Redis缓存在「苍穹外卖」中的进一步拓展。'
 publishDate: 2025-12-19 21:23:05
 tags:
   - backend
