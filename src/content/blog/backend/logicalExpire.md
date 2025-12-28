@@ -1,6 +1,6 @@
 ---
 title: 基于逻辑过期解决缓存击穿
-description: '异步重建+双重检查+热数据保活。'
+description: '异步重建+双重检查+TTL刷新。'
 publishDate: 2025-12-27 23:41:27
 tags:
   - backend
@@ -56,5 +56,11 @@ tags:
 
 <br>
 
-具体代码实现：
-![Pasted image 20251227230336](images/locicalExpire.png)
+
+
+完整代码：
+
+![](images/logicalExpire.png)
+
+
+
